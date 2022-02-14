@@ -1,0 +1,29 @@
+@import "styles/mixins";
+
+.joinOur {
+  width: 100%;
+
+  @include for-tablet-landscape-up {
+    display: flex;
+    height: 750px;
+    align-items: center;
+    background-image: url("/assets/bloco_final_image.svg");
+    background-repeat: no-repeat;
+    background-size: 54%;
+    background-position: center right;
+  }
+
+  .joinOurContent {
+    width: 90%;
+    padding-left: 3rem;
+
+    @include for-tablet-landscape-up {
+      padding-left: 7rem;
+      width: 50%;
+    }
+
+    h1 {
+      line-height: 43px;
+    }
+  }
+}

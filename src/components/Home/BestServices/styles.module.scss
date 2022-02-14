@@ -1,0 +1,43 @@
+@import "styles/mixins";
+
+.bestServices {
+  width: 100%;
+
+  @include for-tablet-landscape-up {
+    display: flex;
+    height: 750px;
+    justify-content: space-around;
+    align-items: center;
+    background-image: url("/assets/bloco_services.svg");
+    background-repeat: no-repeat;
+    background-size: 55%;
+    background-position: center left;
+  }
+
+  h1 {
+    letter-spacing: 1px;
+    line-height: 43px;
+  }
+
+  .bestServicesContent {
+    padding: 1rem;
+    max-width: 467px;
+
+    @include for-phone {
+      margin: 0 auto;
+
+      button {
+        width: 100%;
+      }
+    }
+
+    @include for-tablet-landscape-up {
+      margin-left: 30rem;
+    }
+
+    p {
+      font-weight: bold;
+      color: var(--grey-600);
+    }
+  }
+}

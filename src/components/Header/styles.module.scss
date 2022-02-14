@@ -1,0 +1,142 @@
+@import "styles/mixins";
+
+.header {
+  max-width: 100%;
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.55);
+  background: white;
+  @include for-desktop-up {
+    background: transparent;
+    box-shadow: none;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    li#responsive {
+      list-style: none;
+      display: none;
+    }
+
+    ul {
+      display: flex;
+      align-items: center;
+
+      &#menuOpen {
+        display: block;
+      }
+
+      li {
+        font-family: "Mukta", sans-serif;
+        list-style: none;
+
+        & + li {
+          margin-left: 1.5rem;
+        }
+
+        &:hover {
+          text-decoration: underline;
+          cursor: pointer;
+        }
+
+        @include for-desktop-up {
+          color: white;
+        }
+      }
+
+      @include for-phone {
+        position: absolute;
+        top: 3.1rem;
+        width: 100%;
+        z-index: 1;
+        left: 0;
+        right: 0;
+        padding: 1rem;
+        text-align: center;
+        background: var(--green-500);
+
+        li {
+          & + li {
+            margin-left: 0;
+          }
+        }
+      }
+    }
+
+    /* Responsive NAV Mixins */
+    @include for-phone {
+      padding: 0;
+
+      li#responsive {
+        display: block;
+      }
+
+      ul {
+        display: none;
+      }
+    }
+
+    @include for-tablet-portrait-up {
+      padding: 0;
+    }
+
+    @include for-desktop-up {
+      padding: 0 12rem;
+    }
+  }
+
+  .logo {
+    color: var(--green-500);
+    font-size: 5vw;
+    font-weight: bold;
+    font-family: "Montserrat", sans-serif;
+
+    /* Responsive Logo Mixins */
+    @include for-phone {
+      font-size: 5vw;
+    }
+
+    @include for-tablet-portrait-up {
+      font-size: 1.2rem;
+    }
+
+    @include for-tablet-landscape-up {
+      font-size: 1.8rem;
+    }
+  }
+}
+
+/* Bars Container */
+.barsContainer {
+  cursor: pointer;
+
+  span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+
+  &.menuOpen {
+    span:first-child {
+      -webkit-transform: rotate(-45deg) translate(-5px, 5px);
+      transform: rotate(-45deg) translate(-5px, 5px);
+    }
+
+    span:nth-child(2) {
+      opacity: 0;
+    }
+
+    span:nth-child(3) {
+      -webkit-transform: rotate(45deg) translate(-8px, -8px);
+      transform: rotate(45deg) translate(-8px, -8px);
+    }
+  }
+}

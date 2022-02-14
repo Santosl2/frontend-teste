@@ -1,0 +1,44 @@
+@import "styles/mixins";
+
+.bannerHero {
+  display: flex;
+  justify-content: center;
+  max-width: 1440px;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+
+  .leftContent {
+    padding: 4rem 1rem 0 1rem;
+  }
+
+  .rightContent {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: -7rem;
+  }
+
+  h1 {
+    font-size: 3rem; // 48px
+    letter-spacing: 1px;
+    line-height: 55px;
+  }
+
+  @include for-desktop-up {
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+
+    .leftContent,
+    .rightContent {
+      flex-basis: 48%;
+    }
+
+    .rightContent {
+      display: block;
+      z-index: -1;
+      width: 60vw;
+      height: 100%;
+    }
+  }
+}

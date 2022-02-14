@@ -1,0 +1,28 @@
+@import "styles/mixins";
+
+.form {
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+
+  input {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  button {
+    width: 100% !important;
+    @include for-tablet-landscape-up {
+      min-width: 90px !important;
+      max-width: 90px;
+    }
+  }
+
+  @include for-tablet-landscape-up {
+    flex-direction: row;
+    max-width: 70%;
+    button {
+      margin-left: 1rem;
+    }
+  }
+}

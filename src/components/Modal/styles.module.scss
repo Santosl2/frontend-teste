@@ -1,0 +1,94 @@
+@import "styles/mixins";
+
+.modal {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.75);
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  z-index: 2;
+
+  .modalContent {
+    background-color: white;
+    max-width: 600px;
+    min-width: 90vw;
+    padding: 1rem;
+    border-radius: 5px;
+    margin: 0 auto;
+
+    h1,
+    small {
+      padding-left: 1rem;
+    }
+
+    small {
+      font-weight: bold;
+      color: var(--grey-600);
+      @include for-phone {
+        text-align: center;
+      }
+    }
+  }
+
+  #modalRegisterFooter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    border-top: 1px solid rgb(190, 190, 190);
+    padding-top: 1rem;
+    margin-top: 1rem;
+
+    button {
+      width: 40% !important;
+      min-width: none;
+      margin-right: 1rem;
+    }
+  }
+
+  form {
+    display: flex;
+    flex-wrap: wrap;
+
+    #column {
+      display: flex;
+      flex-direction: column;
+
+      small {
+        color: var(--red-500);
+      }
+    }
+
+    button {
+      width: 40px !important;
+    }
+
+    #groupInputs {
+      input {
+        width: 100%;
+
+        @include for-tablet-landscape-up {
+          width: calc(100% / 3.28);
+        }
+      }
+    }
+  }
+
+  input {
+    margin-bottom: 1rem;
+
+    @include for-tablet-landscape-up {
+      width: 47%;
+      margin-left: 1rem;
+    }
+
+    &#cep {
+      width: 100%;
+    }
+  }
+}

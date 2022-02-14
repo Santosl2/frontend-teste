@@ -1,0 +1,32 @@
+.button {
+  min-width: 130px;
+  height: 52px;
+  border-radius: 5px;
+  background: white;
+  border: 1px solid white;
+  color: var(--green-500);
+  transition: background 0.3s ease-in, color 0.2s linear;
+  cursor: pointer;
+  font-weight: bold;
+
+  &.cancelBtn {
+    background: var(--red-500) !important;
+
+    &:hover {
+      background: darken(rgb(220, 99, 88), 20%) !important;
+    }
+  }
+  &.coloredBtn {
+    background: var(--green-500);
+    color: white;
+
+    &:hover {
+      background: darken(rgb(186, 220, 88), 20%);
+    }
+  }
+
+  &:hover {
+    background: var(--green-500);
+    color: white;
+  }
+}
