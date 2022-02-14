@@ -1,5 +1,5 @@
 import { useModal } from "@/hooks/useModal";
-import { BaseSyntheticEvent, useEffect } from "react";
+import { BaseSyntheticEvent } from "react";
 import style from "./styles.module.scss";
 
 type Props = {
